@@ -27,18 +27,15 @@ function removeKFromList(l, k) {
     if (l.value == k){
       l.value = l.next.value
       l.next = l.next.next
-      return removeKFromList(l, k)
+      removeKFromList(l, k)
     } else {
       removeKFromList(l.next, k)
       if (l.next.value == null){
         l.next = null
       }
-      return l
     }
-  } else {
-    if (l.value == k) l.value = null
-    return l
-  }
+  } else if (l.value == k) l.value = null
+  return l
 }
 
 module.exports = {
